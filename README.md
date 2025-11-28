@@ -33,6 +33,7 @@ Con estos datos, el sistema clasifica a los estudiantes en:
 - Riesgo bajo
 - Riesgo medio
 - Riesgo alto de abandono
+- riesgo extremo de abandono
 
 ---
 
@@ -43,7 +44,7 @@ Los tutores pueden:
 - Ver la lista de estudiantes
 - Visualizar el nivel de riesgo de cada estudiante
 - Consultar historial de alertas e intervenciones
-- Registrar acciones de acompañamiento
+- Visualizar posibles seguimientos al estudiante
 
 ---
 
@@ -52,10 +53,10 @@ Los tutores pueden:
 El sistema genera automáticamente:
 
 - Alertas internas en el panel
-- Simulación de envío de correos electrónicos
+- Sugerencias para cada tipo de nivel de seguimiento
 - Notificaciones visuales en la plataforma
 
-> Nota: en este prototipo el envío de correos es simulado mediante registros en localStorage.
+> Nota: en este prototipo es simulado mediante registros en localStorage.
 
 ---
 
@@ -86,21 +87,6 @@ python app.py
 http://127.0.0.1:5000
 
 
-Notas
-Usuarios por defecto
-
-Tutor (administrador):
-
-Usuario: admin
-
-Clave: 1234
-
-Usuario de prueba (estudiante):
-
-Usuario: camila
-
-Clave: 1234
-
 Permisos
 El tutor puede:
 
@@ -110,17 +96,7 @@ Consultar panel de analítica predictiva
 
 Revisar alertas generadas automáticamente
 
-Registrar intervenciones manuales
-
-Los estudiantes pueden:
-
-Ver su propio nivel de riesgo
-
-Recibir notificaciones simuladas
-
-Consultar su historial académico
-
-Almacenamiento de datos
+Revisar sugerencias
 
 Todos los datos se guardan en el navegador mediante localStorage:
 
