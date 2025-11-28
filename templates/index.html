@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SATAP - Registro de Estudiantes</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/diseño.css') }}">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-black">
+    <div class="container-fluid">
+      <a class="navbar-brand text-danger" href="/">SATAP - Prototipo</a>
+      <div>
+        <a class="btn btn-outline-danger btn-sm" href="/dashboard">Panel de tutores</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container py-4">
+
+    <h1 class="mb-4 text-light">Registrar estudiantes / Evaluar riesgo</h1>
+
+    <!-- FORMULARIO DE REGISTRO -->
+    <form id="formStudent" class="row g-3">
+
+      <div class="col-md-6">
+        <label class="form-label text-light">Nombre completo del estudiante</label>
+        <input id="nombre" class="form-control" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label text-light">Correo electrónico</label>
+        <input id="correo" type="email" class="form-control" required>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label text-light">Asistencia (%)</label>
+        <input id="asistencia" type="number" min="0" max="100" class="form-control" required>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label text-light">Nota promedio (1.0 - 7.0)</label>
+        <input id="notas" type="number" step="0.1" min="1" max="7" class="form-control" required>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label text-light">Interacciones (automático)</label>
+        <input id="interacciones" type="number" class="form-control" readonly>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label text-light">Semanas desde registro</label>
+        <input id="semanas" type="number" min="0" class="form-control" required>
+      </div>
+
+      <!-- BOTONES -->
+      <div class="col-12 mt-3">
+        <button id="saveBtn" type="submit" class="btn btn-danger">
+          Guardar estudiante
+        </button>
+
+        <button id="clearBtn" type="button" class="btn btn-outline-danger ms-2">
+          Limpiar
+        </button>
+      </div>
+
+    </form>
+
+    <!-- RESULTADO DE RIESGO / PREDICCIÓN -->
+    <hr class="my-4">
+
+    <h3 class="text-light">Resultado de riesgo de abandono</h3>
+    <!-- Aquí tu JS debe mostrar automáticamente si el estudiante está en alto riesgo
+         usando asistencia + semanas para calcular el promedio -->
+    <div id="predictionResult"
+         class="alert d-none mt-3">
+    </div>
+
+    <!-- LISTA DE ESTUDIANTES REGISTRADOS -->
+    <h3 class="text-light mt-4">Estudiantes registrados</h3>
+    <div id="studentsList" class="list-group mt-3"></div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

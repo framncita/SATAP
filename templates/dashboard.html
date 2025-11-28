@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/diseño.css') }}">
+</head>
+<body>
+
+  <h1>📊 Dashboard de Estudiantes</h1>
+
+  <section>
+    <h2>Lista de Estudiantes</h2>
+    <div id="panel-estudiantes"></div>
+  </section>
+
+  <section>
+    <h2>⚠️ Estudiantes en Alto Riesgo</h2>
+    <ul id="lista-alto-riesgo"></ul>
+  </section>
+
+  <button onclick="volverInicio()">⬅️ Volver al Inicio</button>
+
+  <!-- IMPORTANTE: carga correcta de JS en Flask -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
