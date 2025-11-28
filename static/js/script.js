@@ -385,7 +385,7 @@ function mostrarAltoRiesgoDashboard() {
     let medida = "Mantener seguimiento y apoyo académico.";
     if (clasif.nivelRiesgo === "EXTREMO") {
       medida =
-        "Contacto urgente, reunión con jefatura y derivar a apoyo psicoeducativo.";
+        "Contacto urgente, reunión con profesores y derivar a apoyo academico y psicologico.";
     } else if (clasif.nivelRiesgo === "ALTO") {
       medida =
         "Contactar en la semana, plan de tutorías y seguimiento cercano.";
